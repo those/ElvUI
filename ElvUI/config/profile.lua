@@ -24,6 +24,8 @@ P['general'] = {
 	["backdropcolor"] = { r = .16,g = .16,b = .16 },
 	["backdropfadecolor"] = { r = .10,g = .10,b = .10, a = 0.9 },
 	["valuecolor"] = {r = valuer,g = valueg,b = valueb},
+	["custombordercolor"] = { r = .20,g = .20,b = .20 },
+	["custombackdropfadecolor"] = { r = .10,g = .10,b = .10, a = 0.9 },
 	
 	--panels
 	['panelWidth'] = 380,

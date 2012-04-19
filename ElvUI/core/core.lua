@@ -66,6 +66,14 @@ function E:UpdateMedia()
 	backdrop = self.db['general'].backdropfadecolor
 	self["media"].backdropfadecolor = {backdrop.r, backdrop.g, backdrop.b, backdrop.a}
 	
+	--Custom Border Color
+	local border = self.db['general'].custombordercolor
+	self["media"].custombordercolor = {border.r, border.g, border.b}
+	
+	--Custom Backdrop Fade Color
+	backdrop = self.db['general'].custombackdropfadecolor
+	self["media"].custombackdropfadecolor = {backdrop.r, backdrop.g, backdrop.b, backdrop.a}
+	
 	--Value Color
 	local value = self.db['general'].valuecolor
 	self["media"].hexvaluecolor = self:RGBToHex(value.r, value.g, value.b)
@@ -108,6 +116,8 @@ function E:UpdateBorderColors()
 		if frame then
 			if frame.template == 'Default' or frame.template == 'Transparent' or frame.template == nil then
 				frame:SetBackdropBorderColor(unpack(self['media'].bordercolor))
+			elseif frame.template == 'Custom' then
+				frame:SetBackdropBorderColor(unpack(self['media'].custombordercolor))
 			end
 		else
 			self["frames"][frame] = nil;
@@ -126,6 +136,8 @@ function E:UpdateBackdropColors()
 				end
 			elseif frame.template == 'Transparent' then
 				frame:SetBackdropColor(unpack(self['media'].backdropfadecolor))
+			elseif frame.template == 'Custom' then
+				frame:SetBackdropColor(unpack(self['media'].custombackdropfadecolor))
 			end
 		else
 			self["frames"][frame] = nil;

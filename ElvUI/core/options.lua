@@ -368,7 +368,7 @@ E.Options.args.general = {
 								t.r, t.g, t.b, t.a = r, g, b, a
 								E:UpdateMedia()
 							end,						
-						},						
+						},
 						resetbutton = {
 							type = "execute",
 							order = 5,
@@ -381,6 +381,42 @@ E.Options.args.general = {
 								E:UpdateMedia()
 								E:UpdateFrameTemplates()								
 							end,
+						},
+						custombordercolor = {
+							type = "color",
+							order = 6,
+							name = L["Custom Border Color"],
+							desc = L["Border color of the UI for the Custom Template."],
+							hasAlpha = false,
+							get = function(info)
+								local t = E.db.general[ info[#info] ]
+								return t.r, t.g, t.b, t.a
+							end,
+							set = function(info, r, g, b)
+								E.db.general[ info[#info] ] = {}
+								local t = E.db.general[ info[#info] ]
+								t.r, t.g, t.b = r, g, b
+								E:UpdateMedia()
+								E:UpdateBorderColors()
+							end,					
+						},
+						custombackdropfadecolor = {
+							type = "color",
+							order = 7,
+							name = L["Custom Backdrop Faded Color"],
+							desc = L["Backdrop color of transparent frames for the Custom Template."],
+							hasAlpha = true,
+							get = function(info)
+								local t = E.db.general[ info[#info] ]
+								return t.r, t.g, t.b, t.a
+							end,
+							set = function(info, r, g, b, a)
+								E.db.general[ info[#info] ] = {}
+								local t = E.db.general[ info[#info] ]	
+								t.r, t.g, t.b, t.a = r, g, b, a
+								E:UpdateMedia()
+								E:UpdateBackdropColors()
+							end,						
 						},
 					},
 				},

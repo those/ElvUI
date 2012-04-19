@@ -19,6 +19,9 @@ local function GetTemplate(t)
 	elseif t == "Transparent" then
 		borderr, borderg, borderb = unpack(E["media"].bordercolor)
 		backdropr, backdropg, backdropb, backdropa = unpack(E["media"].backdropfadecolor)
+	elseif t == "Custom" then
+		borderr, borderg, borderb = unpack(E["media"].custombordercolor)
+		backdropr, backdropg, backdropb, backdropa = unpack(E["media"].custombackdropfadecolor)
 	else
 		borderr, borderg, borderb = unpack(E["media"].bordercolor)
 		backdropr, backdropg, backdropb = unpack(E["media"].backdropcolor)

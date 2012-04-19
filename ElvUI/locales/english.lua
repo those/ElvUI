@@ -8,6 +8,10 @@ else
 end
 
 if not L then return; end
+L["Custom Border Color"] = "Custom Border Color"
+L["Border color of the UI for the Custom Template."] = "Border color of the UI for the Custom Template."
+L["Custom Backdrop Faded Color"] = "Custom Backdrop Faded Color"
+L["Backdrop color of transparent frames for the Custom Template."] = "Backdrop color of transparent frames for the Custom Template."
 L["ChatTab_Datatext_Panel"] = "Right Chat Tab"
 L["Bottom_Datatext_Panel"] = "Bottom Datatext Panel"
 L["24-Hour Time"] = "24-Hour Time"
